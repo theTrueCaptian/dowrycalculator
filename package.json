@@ -1,0 +1,24 @@
+{
+  "name": "dowryapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "http-server",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "http-server": "^0.12.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theTrueCaptian/dowrycalculator.git"
+  },
+  "author": "Maeda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theTrueCaptian/dowrycalculator/issues"
+  },
+  "homepage": "https://github.com/theTrueCaptian/dowrycalculator#readme"
+}

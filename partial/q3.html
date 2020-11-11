@@ -1,0 +1,46 @@
+<script>
+$(document).ready(function() {
+	
+});
+function q3(){
+	next($('input[name=\'q3\']:checked').val())
+}
+</script>
+
+
+<span class="font-weight-bold text-primary">
+	Question 3: What color is your hair?
+</span>
+
+<div class="d-flex justify-content-center my-4">
+	<div class="w-75">
+	
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="q3" value="0" checked>
+			<label class="form-check-label" >No hair </label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="q3" value="1" >
+			<label class="form-check-label" >Black</label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="q3" value="2" >
+			<label class="form-check-label" >Brown </label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="q3" value="3" >
+			<label class="form-check-label" >Red </label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="q3" value="4" >
+			<label class="form-check-label" >Blonde</label>
+		</div>
+	</div>
+</div>
+
+<button type="button" class="btn btn-primary" onclick="q3()">
+	Next
+</button>
+
+
+
