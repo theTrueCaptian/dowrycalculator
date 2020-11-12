@@ -35,7 +35,7 @@ function updatePage(){
 }
 
 function calcDowry(){
-	page.dowry = round(1000 + (
+	page.dowry = Math.round(1000 + (
 		(parseFloat(page.ans[0])/10)  
 		+ (parseFloat(page.ans[1])/4) 
 		+ (parseFloat(page.ans[2])/4) 
