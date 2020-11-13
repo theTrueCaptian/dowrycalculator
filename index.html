@@ -7,10 +7,12 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
 
 <script>
 var page = {
 	"ans":[0,0,0,0,0], 
+	"qnum":[10,4,4,4,4], 
 	"curr":0,
 	"partials":["q1","q2", "q3", "q4", "q5"],
 	"dowry": 0
@@ -35,16 +37,12 @@ function updatePage(){
 }
 
 function calcDowry(){
-	const min = 150;
-	const max = 20000
-	page.dowry = Math.round(min + (
-		(parseFloat(page.ans[0])/10)  
-		+ (parseFloat(page.ans[1])/4) 
-		+ (parseFloat(page.ans[2])/4) 
-		+ (parseFloat(page.ans[3])/4)
-		+ (parseFloat(page.ans[4])/4)
-		)/(max-min));
- 		
+	const min = 150.0;
+	const max = 20000.0;
+	var weights = _.reduce(page.ans, function(sum,n,i){var tot = sum + (parseFloat(n)/page.qnum[i]);console.log(tot);return tot;},0)/page.ans.length;
+	
+	page.dowry = Math.round(min+(weights*(max-min)));
+ 	console.log(weights, page.dowry)
    $("#dynamic-content" ).load( "partial/calcDowry.html", function(){});
 }
 function setupSlider(){
